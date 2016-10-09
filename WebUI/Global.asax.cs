@@ -7,6 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using WebUI.Infrastructure;
 
 namespace WebUI
 {
@@ -16,8 +17,12 @@ namespace WebUI
         {
             // Код, выполняемый при запуске приложения
             AreaRegistration.RegisterAllAreas();
+            
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
+            
+
         }
     }
 }
