@@ -1,0 +1,23 @@
+﻿@model WebUI.Models.NavigationViewModel
+
+<div>
+    Genres
+    <div>
+        
+        @foreach (var item in Model.Genres)
+        {
+            @item <br />
+        }
+    </div>
+    Years
+    <div>
+        @foreach (var item in Model.Years)
+        {
+            if (item != null)
+            {
+                @item.Value.Year <br />
+            }
+        }
+    </div>
+</div>
+

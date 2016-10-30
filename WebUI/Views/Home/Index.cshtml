@@ -5,19 +5,10 @@
     ViewBag.Title = "Index";
 }
 
+@Html.Action("Navigation", "Nav")
 
 @foreach (var song in Model)
-{
-    @song.Name 
-    foreach (var item in song.Artists)
-    {
-        if (item.Group != null)
-        {
-            @item.Group 
-            continue;
-        }
-        @item.Name  @item.Surname
-    }
-   <br>
+{    
+    Html.RenderPartial("SongSummary", song);
 }
 

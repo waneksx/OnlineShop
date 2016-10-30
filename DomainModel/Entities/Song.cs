@@ -18,7 +18,9 @@ namespace DomainModel.Entities
 
         public virtual ICollection<Artist> Artists { get; set; }
 
-        public string Album { get; set;}
+        public string Album { get; set; }
+
+        public DateTime? Year { get; set; }
 
         public int? Rate { get; set; }
 

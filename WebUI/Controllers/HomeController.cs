@@ -10,15 +10,15 @@ namespace WebUI.Controllers
 {
     public class HomeController : Controller
     {
-        private ISongRepo Songs;
+        private ISongRepo songsRepo;
         public HomeController(ISongRepo Songs)
         {
-            this.Songs = Songs;
+            songsRepo = Songs;
         }
         // GET: Home
         public ActionResult Index()
         {
-            var songs = Songs.Songs;
+            var songs = songsRepo.Songs;
             return View(songs);
         }
     }

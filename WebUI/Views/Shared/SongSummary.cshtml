@@ -1,0 +1,19 @@
+﻿@model DomainModel.Entities.Song
+
+
+<div class="item">
+    <h3>@Model.Name</h3>
+    @foreach (var item in Model.Artists)
+    {
+        if (item.Group != null)
+        {
+            @item.Group
+        }
+        @item.Name @: @item.Surname
+        if (item != Model.Artists.Last())
+        {
+            @: feat
+        }
+    }
+    <br>
+</div>
